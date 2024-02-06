@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('userName')->nullable();
+            $table->string('nickName')->nullable();
             $table->string('email')->unique();
             $table->string('phoneNo')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('photo')->nullable();
             $table->string('address')->nullable();
-     
+
             $table->enum('status', ['active' , 'inactive'])->default('active');
             $table->enum('role', ['admin' , 'user' , 'agent'])->default('user');
 

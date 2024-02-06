@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-<!--
-Template Name: NobleUI - HTML Bootstrap 5 Admin Dashboard Template
-Author: NobleUI
-Website: https://www.nobleui.com
-Portfolio: https://themeforest.net/user/nobleui/portfolio
-Contact: nobleui123@gmail.com
-Purchase: https://1.envato.market/nobleui_admin
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
 <html lang="en">
 
 <head>
@@ -28,29 +19,30 @@ License: For each use you must have a valid license purchased only from above li
     <!-- End fonts -->
 
     <!-- core:css -->
-    <link rel="stylesheet" href="../assets/vendors/core/core.css">
+    <link rel="stylesheet" href="{{ asset('..backend/assets/vendors/core/core.css') }}">
     <!-- endinject -->
 
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="../assets/vendors/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/flatpickr/flatpickr.min.css') }}">
     <!-- End plugin css for this page -->
 
     <!-- inject:css -->
-    <link rel="stylesheet" href="../assets/fonts/feather-font/css/iconfont.css">
-    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="{{ asset('backend/assets/fonts/feather-font/css/iconfont.css') }}">
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/flag-icon-css/css/flag-icon.min.css') }}">
     <!-- endinject -->
 
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../assets/css/demo2/style.css">
+    <link rel="stylesheet" href="{{ asset('backend/assets/css/demo2/style.css') }}">
     <!-- End layout styles -->
 
-    <link rel="shortcut icon" href="../assets/images/favicon.png" />
+    <link rel="shortcut icon" href="{{ asset('../assets/images/favicon.png') }}" />
 </head>
 
 <body>
     <div class="main-wrapper">
 
-        <!-- partial:partials/_sidebar.html -->
+
+
         <nav class="sidebar">
             <div class="sidebar-header">
                 <a href="#" class="sidebar-brand">
@@ -72,6 +64,7 @@ License: For each use you must have a valid license purchased only from above li
                         </a>
                     </li>
                     <li class="nav-item nav-category">web apps</li>
+
                     <li class="nav-item">
                         <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button"
                             aria-expanded="false" aria-controls="emails">
@@ -93,12 +86,7 @@ License: For each use you must have a valid license purchased only from above li
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a href="pages/apps/chat.html" class="nav-link">
-                            <i class="link-icon" data-feather="message-square"></i>
-                            <span class="link-title">Chat</span>
-                        </a>
-                    </li>
+
                     <li class="nav-item">
                         <a href="pages/apps/calendar.html" class="nav-link">
                             <i class="link-icon" data-feather="calendar"></i>
@@ -211,167 +199,8 @@ License: For each use you must have a valid license purchased only from above li
                             </ul>
                         </div>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#forms" role="button"
-                            aria-expanded="false" aria-controls="forms">
-                            <i class="link-icon" data-feather="inbox"></i>
-                            <span class="link-title">Forms</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="forms">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/forms/basic-elements.html" class="nav-link">Basic Elements</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/advanced-elements.html" class="nav-link">Advanced
-                                        Elements</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/editors.html" class="nav-link">Editors</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/forms/wizard.html" class="nav-link">Wizard</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#charts" role="button"
-                            aria-expanded="false" aria-controls="charts">
-                            <i class="link-icon" data-feather="pie-chart"></i>
-                            <span class="link-title">Charts</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="charts">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/charts/apex.html" class="nav-link">Apex</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/chartjs.html" class="nav-link">ChartJs</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">Flot</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/morrisjs.html" class="nav-link">Morris</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/peity.html" class="nav-link">Peity</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/sparkline.html" class="nav-link">Sparkline</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#tables" role="button"
-                            aria-expanded="false" aria-controls="tables">
-                            <i class="link-icon" data-feather="layout"></i>
-                            <span class="link-title">Table</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="tables">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/tables/basic-table.html" class="nav-link">Basic Tables</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/tables/data-table.html" class="nav-link">Data Table</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#icons" role="button"
-                            aria-expanded="false" aria-controls="icons">
-                            <i class="link-icon" data-feather="smile"></i>
-                            <span class="link-title">Icons</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="icons">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/icons/feather-icons.html" class="nav-link">Feather Icons</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/icons/flag-icons.html" class="nav-link">Flag Icons</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/icons/mdi-icons.html" class="nav-link">Mdi Icons</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item nav-category">Pages</li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#general-pages" role="button"
-                            aria-expanded="false" aria-controls="general-pages">
-                            <i class="link-icon" data-feather="book"></i>
-                            <span class="link-title">Special pages</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="general-pages">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/general/blank-page.html" class="nav-link">Blank page</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/general/faq.html" class="nav-link">Faq</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/general/invoice.html" class="nav-link">Invoice</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/general/profile.html" class="nav-link">Profile</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/general/pricing.html" class="nav-link">Pricing</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/general/timeline.html" class="nav-link">Timeline</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#authPages" role="button"
-                            aria-expanded="false" aria-controls="authPages">
-                            <i class="link-icon" data-feather="unlock"></i>
-                            <span class="link-title">Authentication</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="authPages">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/auth/login.html" class="nav-link">Login</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/auth/register.html" class="nav-link">Register</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#errorPages" role="button"
-                            aria-expanded="false" aria-controls="errorPages">
-                            <i class="link-icon" data-feather="cloud-off"></i>
-                            <span class="link-title">Error</span>
-                            <i class="link-arrow" data-feather="chevron-down"></i>
-                        </a>
-                        <div class="collapse" id="errorPages">
-                            <ul class="nav sub-menu">
-                                <li class="nav-item">
-                                    <a href="pages/error/404.html" class="nav-link">404</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/error/500.html" class="nav-link">500</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
+
+
                     <li class="nav-item nav-category">Docs</li>
                     <li class="nav-item">
                         <a href="https://www.nobleui.com/html/documentation/docs.html" target="_blank"
@@ -383,6 +212,7 @@ License: For each use you must have a valid license purchased only from above li
                 </ul>
             </div>
         </nav>
+
         <nav class="settings-sidebar">
             <div class="sidebar-body">
                 <a href="#" class="settings-sidebar-toggler">
@@ -472,7 +302,7 @@ License: For each use you must have a valid license purchased only from above li
                                         </a>
                                     </div>
                                     <div class="col-3 text-center">
-                                        <a href="pages/general/profile.html"
+                                        <a href="{{ route('admin.profile') }}"
                                             class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i
                                                 data-feather="instagram" class="icon-lg mb-1"></i>
                                             <p class="tx-12">Profile</p>
@@ -638,8 +468,9 @@ License: For each use you must have a valid license purchased only from above li
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="{{ route('admin.profile') }}"
+                                id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
                                 <img class="wd-30 ht-30 rounded-circle" src="https://via.placeholder.com/30x30"
                                     alt="profile">
                             </a>
@@ -656,7 +487,7 @@ License: For each use you must have a valid license purchased only from above li
                                 </div>
                                 <ul class="list-unstyled p-1">
                                     <li class="dropdown-item py-2">
-                                        <a href="pages/general/profile.html" class="text-body ms-0">
+                                        <a href="{{ route('admin.profile') }}" class="text-body ms-0">
                                             <i class="me-2 icon-md" data-feather="user"></i>
                                             <span>Profile</span>
                                         </a>
@@ -674,7 +505,7 @@ License: For each use you must have a valid license purchased only from above li
                                         </a>
                                     </li>
                                     <li class="dropdown-item py-2">
-                                        <a href="{{ route("logout") }}" class="text-body ms-0">
+                                        <a href="{{ route('logout') }}" class="text-body ms-0">
                                             <i class="me-2 icon-md" data-feather="log-out"></i>
                                             <span>Log Out</span>
                                         </a>
@@ -687,7 +518,7 @@ License: For each use you must have a valid license purchased only from above li
             </nav>
             <!-- partial -->
 
-            @yield("admin")
+            @yield('admin')
 
 
             <!-- partial:partials/_footer.html -->

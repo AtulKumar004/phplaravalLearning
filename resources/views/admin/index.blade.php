@@ -187,7 +187,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- row -->
+    </div>
+    
 
     <div class="row">
         <div class="col-12 col-xl-12 grid-margin stretch-card">
@@ -240,7 +241,7 @@
                 </div>
             </div>
         </div>
-    </div> <!-- row -->
+    </div>
 
     <div class="row">
         <div class="col-lg-7 col-xl-8 grid-margin stretch-card">
@@ -334,7 +335,8 @@
                 </div>
             </div>
         </div>
-    </div> <!-- row -->
+    </div>
+
 
     <div class="row">
         <div class="col-lg-5 col-xl-4 grid-margin grid-margin-xl-0 stretch-card">

@@ -44,7 +44,7 @@ class AdminController extends Controller
         $profileData->userName =  $request->userName;
         $profileData->email =  $request->email;
         $profileData->phoneNo =  $request->phoneNo;
-        $profileData['address'] =  $request->address;
+        $profileData->address =  $request->address;
 
         if($request->file('photo')){
             $file = $request->file('photo');
@@ -54,9 +54,13 @@ class AdminController extends Controller
 
         }
         $profileData->save();
+        
+        $notification = array(
+            'message' => "Profile Updated",
+            "alert-type" => 'success'
+        );
 
-
-        return redirect()->back();
+        return redirect()->back()->with($notification);
 
 
     }

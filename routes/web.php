@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Backend\PropertyTypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -37,6 +38,18 @@ Route::middleware(['auth' , 'role:admin'])->group(function () {
 
     Route::post('/admin/profile/store', [AdminController::class, 'AdminProfileStore'])->name('admin.profile.store');
     Route::get('/logout', [AdminController::class, 'handleLogout'])->name('logout');
+});
+
+Route::middleware(['auth' , 'role:admin'])->group(function () {
+    Route::get('/admin/dashboard', [AdminController::class, 'AdminDashboard'])->name('admin.dashboard');
+
+    Route::controller(PropertyTypeController::class)->group(function(){
+
+
+        Route::get('/all/type', "handleAllType")->name('admin.all.type');
+
+    });
+
 });
 Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
 Route::middleware(['auth' , 'role:agent'])->group(function () {

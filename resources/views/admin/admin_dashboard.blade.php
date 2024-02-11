@@ -11,7 +11,6 @@
         content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
     <title>NobleUI - HTML Bootstrap 5 Admin Dashboard Template</title>
-    {{-- Toster --}}
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,6 +37,10 @@
 
     <link rel="shortcut icon" href="{{ asset('../assets/images/favicon.png') }}" />
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
+       <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{{ asset('backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.css') }}">
+    <!-- End plugin css for this page -->
+
 </head>
 
 <body>
@@ -68,16 +71,17 @@
                     <li class="nav-item nav-category">web apps</li>
 
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="collapse" href="#emails" role="button"
+                        <a class="nav-link" data-bs-toggle="collapse" href="#property_type" role="button"
                             aria-expanded="false" aria-controls="emails">
                             <i class="link-icon" data-feather="mail"></i>
-                            <span class="link-title">Email</span>
+
+                            <span class="link-title">Property Type</span>
                             <i class="link-arrow" data-feather="chevron-down"></i>
                         </a>
-                        <div class="collapse" id="emails">
+                        <div class="collapse" id="property_type">
                             <ul class="nav sub-menu">
                                 <li class="nav-item">
-                                    <a href="pages/email/inbox.html" class="nav-link">Inbox</a>
+                                    <a href="{{ route('admin.all.type') }}" class="nav-link">All Type</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="pages/email/read.html" class="nav-link">Read</a>
@@ -370,6 +374,12 @@
             }
         @endif
     </script>
+
+    <!-- Js for Data table -->
+    <script src="../backend/assets/vendors/datatables.net/jquery.dataTables.js"></script>
+    <script src="../backend/assets/vendors/datatables.net-bs5/dataTables.bootstrap5.js"></script>
+    <script src="../backend/assets/js/data-table.js"></script>
+    <!-- Js for Data table  -->
 
 </body>
 

@@ -71,51 +71,60 @@
             </div>
             <!-- left wrapper end -->
             <!-- middle wrapper start -->
-            <div class="col-md-8 col-xl-6 middle-wrapper" >
+            <div class="col-md-8 col-xl-6 middle-wrapper">
 
                 <div class="card">
                     <div class="card-body">
 
-                        <h6 class="card-title">Basic Form</h6>
+                        <h6 class="card-title">Password Reset</h6>
 
-                        <form class="forms-sample" method = "post" action = '{{ route('admin.profile.store') }}'
+                        <form class="forms-sample" method = "post" action = '{{ route('admin.update.password') }}'
                             enctype="multipart/form-data">
+
                             @csrf
                             <div class="mb-3">
-                                <label for="exampleInputUsername1" class="form-label">Name</label>
-                                <input type="text" class="form-control" name= "name" value={{ $profileData->name }}
-                                    id="exampleInputUsername1" autocomplete="off" placeholder="Full name">
+                                <label for="old_password" class="form-label">Old Password</label>
+                                <input type="text"
+                                    class="form-control
+                                @error('old_password')
+                                is-invalid
+
+                                @enderror"
+                                    name= "old_password" id="old_password" autocomplete="off"
+                                    placeholder="Enter old password">
+                                @error('old_password')
+                                    <span class=  "text-denger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" name = "email" value={{ $profileData->email }}
-                                    id="exampleInputEmail1" placeholder="Email">
+                                <label for="new_password" class="form-label">New Password</label>
+                                <input type="password"
+                                    class="form-control
+                                @error('new_password')
+                                is-invalid
+
+                                @enderror "
+                                    name= "new_password" id="new_password" autocomplete="off"
+                                    placeholder="Enter New Password">
+
+                                @error('new_password')
+                                    <span class=  "text-denger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPhoneNumber" class="form-label">Phone No</label>
-                                <input type="number" class="form-control" name=  "phoneNo" id="exampleInputPhoneNumber"
-                                    autocomplete="off" value={{ $profileData->phoneNo }} placeholder="Enter Phone no">
-                            </div>
-                            <div class="mb-3">
-                                <label for="exampleInputAddress" class="form-label">Address</label>
+                                <label for="confirm_new_password"
+                                    class="form-label
+                                @error('confirme_new_password')
+                                is-invalid
+
+                                @enderror">Confirm
+                                    New Password</label>
+                                <input type="password" class="form-control" name= "new_password_confirmation"
+                                    id="new_password_confirmation" autocomplete="off" placeholder="Enter Confirm Password">
 
 
-                                <input type="text" class="form-control" name= "address"  id="exampleInputAddress"
-                                    placeholder="Enter address" value={{ $profileData->address }}  />
-                            </div>
-
-
-                            <div class="mb-3">
-                                <label class="form-label" for="image">File upload</label>
-                                <input class="form-control" name= "photo" type="file" id="image" />
                             </div>
 
-                            <div
-                                style = "width: 4rem; height: 4rem; background: white; border-radius: 20rem; overflow: hidden;">
-                                <img id = "showImage" style = "width: 100%; height: 100%; object-fit: contain"
-                                    src= "{{ !empty($profileData->photo) ? url('upload/admin_image/' .$profileData->photo) : url('upload/no_image.jpg') }}" />
-
-                            </div>
 
 
                             <button type="submit" class="btn btn-primary me-2">Submit</button>
@@ -128,69 +137,11 @@
             </div>
             <!-- middle wrapper end -->
             <!-- right wrapper start -->
-            <div class="d-none d-xl-block col-xl-3" >
+            <div class="d-none d-xl-block col-xl-3">
 
             </div>
             <!-- right wrapper end -->
         </div>
 
     </div>
-    {{-- <script type = "text/javascript">
-    $(document).ready(function(){
-        $('#image').change(function(e){
-            var reader = new FileReader();
-            reader.onload = function(e){
-                $('#showImage').attr('src' , e.target.result);
-
-            }
-            reader.readAsDataURL(e.target.files['0']);
-
-        })
-    })
-
-    </script> --}}
-    {{--
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            // Step 1: Wait for the document to be fully loaded
-
-            var imageInput = document.getElementById('image');
-            imageInput.addEventListener('change', function(e) {
-                // Step 2: Attach an event listener to the file input with ID 'image' for the 'change' event
-
-                var reader = new FileReader();
-
-                // Step 3: Create a new FileReader object to read the contents of the selected file
-
-                reader.onload = function(e) {
-                    // Step 4: Set up a callback function to be executed when the file reading is complete
-
-                    var showImage = document.getElementById('showImage');
-                    showImage.setAttribute('src', e.target.result);
-                    // Step 5: Update the 'src' attribute of the image with ID 'showImage' to display the selected image
-                };
-
-                reader.readAsDataURL(e.target.files[0]);
-                // Step 6: Read the contents of the selected file as a data URL
-            });
-        });
-    </script> --}}
-
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            var image = document.getElementById('image');
-            document.addEventListener('change', function(e) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    var showImage = document.getElementById('showImage');
-
-                    console.log("showImage=====>", e.target.result)
-                    showImage.setAttribute('src', e.target.result);
-
-                }
-                reader.readAsDataURL(e.target.files[0]);
-
-            })
-        })
-    </script>
 @endsection
